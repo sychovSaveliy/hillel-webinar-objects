@@ -9,18 +9,33 @@
 // создание класса
 
 function Person(name, age, options) {
+    var size = 2;
+
     this.name = name;
     this.age = age;
 
     options = options || {};
     // or if() else{}
-    this.height = options.height
+    this.height = options.height;
     this.weight = options.weight
+
+    this.calc = function() {
+        return (this.height + size) * this.weight;
+    }
+
+    this.getSize = function() {
+        return size;
+    }
+
+    this.setSize = function(value) {
+        size = value;
+    }
 }
 
-// определяем экзмепляры класса
 
-var p1 = new Person('Vaysa', 27, { height: 85, color: 'red' });
+// определяем экзмепляры класса == объекты
+
+var p1 = new Person('Vaysa', 27, { height: 85, weight: 72, color: 'red' });
 
 var p2 = new Person('Petya', 23, { color: 'red' });
 
@@ -35,7 +50,13 @@ Person.prototype.run = function() {
 }
 
 p1.run();
-p2.run();
+// p2.run();
+
+p1.calc();
+p1.getSize();
+p1.setSize(200);
+p1.getSize();
+p1.calc();
 
 
 
