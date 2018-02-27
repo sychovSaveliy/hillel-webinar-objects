@@ -14,6 +14,11 @@ function Person(name, age, options) {
     this.name = name;
     this.age = age;
 
+    // if(!options) {
+    //     options = {}
+    // }
+
+    // options = options ? options : {};
     options = options || {};
     // or if() else{}
     this.height = options.height;
@@ -37,7 +42,7 @@ function Person(name, age, options) {
 
 var p1 = new Person('Vaysa', 27, { height: 85, weight: 72, color: 'red' });
 
-var p2 = new Person('Petya', 23, { color: 'red' });
+var p2 = new Person('Petya', 23);
 
 console.log(p1, p2);
 
